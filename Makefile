@@ -18,7 +18,10 @@ figures/cmb-fig-rr.pdf: figures/cmb-fig-rr.R boruta/tabulated.RDS heatmaps/hm.R 
 figures/fig-cor-graph.pdf: figures/fig-cor-graph.R data/reward-memory.RDS
 	cd figures; Rscript fig-cor-graph.R
 
-figures: figures/cmb-fig-cor.pdf figures/cmb-fig-rr.pdf figures/fig-sg.pdf figures/fig-cor-graph.pdf
+figures/vfy-fig.pdf: figures/vfy-fig.R data/suppressed-cea.RDS
+	cd figures; Rscript vfy-fig.R
+
+figures: figures/cmb-fig-cor.pdf figures/cmb-fig-rr.pdf figures/fig-sg.pdf figures/fig-cor-graph.pdf figures/vfy-fig.pdf
 
 clean:
 	rm -f figures/*.pdf
